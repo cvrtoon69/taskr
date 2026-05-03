@@ -1,0 +1,46 @@
+# Flutter/Dart specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+coverage/
+lib/generated_plugin_registrant.dart
+
+# Build outputs
+build/
+*.apk
+*.aab
+*.ipa
+
+# Android specific
+android/.gradle/
+android/app/debug.keystore
+android/app/release.keystore
+android/local.properties
+android/key.properties
+
+# iOS specific (if any)
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.generated/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Drift generated files (will be regenerated)
+*.g.dart
+*.freezed.dart
+
+# Keep these for now until first build
+# lib/core/database/*.g.dart
+# lib/domain/entities/*.g.dart
+# lib/core/database/daos/*.g.dart
