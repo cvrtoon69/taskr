@@ -172,6 +172,7 @@ class TaskRepositoryImpl implements TaskRepository {
         }
         return DateTime(newYear, newMonth, newDay);
     }
+    return null;
   }
 
   @override
@@ -238,7 +239,7 @@ class TaskRepositoryImpl implements TaskRepository {
       isRepeating: Value(task.isRepeating),
       repeatType: Value(task.repeatType),
       reminderEnabled: Value(task.reminderEnabled),
-      createdAt: Value(task.createdAt),
+      createdAt: task.createdAt != null ? Value(task.createdAt!) : const Value.absent(),
       completedAt: Value(task.completedAt),
     );
   }

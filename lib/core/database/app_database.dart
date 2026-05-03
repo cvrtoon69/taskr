@@ -30,9 +30,13 @@ class AppDatabase extends _$AppDatabase {
     return driftDatabase(
       name: 'taskr_database',
       native: const DriftNativeOptions(
-        databasePath: 'taskr.sqlite',
+        databasePath: _databasePath,
       ),
     );
+  }
+
+  static Future<String> _databasePath() async {
+    return 'taskr.sqlite';
   }
 
   Future<void> closeDatabase() async {
