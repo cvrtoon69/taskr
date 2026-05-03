@@ -44,7 +44,7 @@ class SubTaskDao extends DatabaseAccessor<AppDatabase> with _$SubTaskDaoMixin {
   }
 
   // Toggle subtask completion
-  Future<bool> toggleSubTaskCompletion(String id, bool isCompleted) {
+  Future<int> toggleSubTaskCompletion(String id, bool isCompleted) {
     return (update(subTasks)..where((st) => st.id.equals(id))).write(
       SubTasksCompanion(isCompleted: Value(isCompleted)),
     );

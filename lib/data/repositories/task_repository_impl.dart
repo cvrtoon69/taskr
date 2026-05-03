@@ -1,6 +1,6 @@
 import 'package:drift/drift.dart';
 import 'package:uuid/uuid.dart';
-import '../../core/database/app_database.dart';
+import '../../core/database/app_database.dart' as db;
 import '../../core/database/tables.dart';
 import '../../core/services/notification_service.dart';
 import '../../domain/entities/task.dart';
@@ -8,7 +8,7 @@ import '../../domain/entities/subtask.dart';
 import '../../domain/repositories/task_repository.dart';
 
 class TaskRepositoryImpl implements TaskRepository {
-  final AppDatabase _database;
+  final db.AppDatabase _database;
   final NotificationService _notifications;
   final Uuid _uuid = const Uuid();
 
@@ -226,8 +226,8 @@ class TaskRepositoryImpl implements TaskRepository {
   }
 
   // Helpers
-  TasksCompanion _toCompanion(Task task) {
-    return TasksCompanion(
+  db.TasksCompanion _toCompanion(Task task) {
+    return db.TasksCompanion(
       id: Value(task.id),
       title: Value(task.title),
       description: Value(task.description),
@@ -243,8 +243,8 @@ class TaskRepositoryImpl implements TaskRepository {
     );
   }
 
-  SubTasksCompanion _toSubTaskCompanion(SubTask subTask) {
-    return SubTasksCompanion(
+  db.SubTasksCompanion _toSubTaskCompanion(SubTask subTask) {
+    return db.SubTasksCompanion(
       id: Value(subTask.id),
       taskId: Value(subTask.taskId),
       title: Value(subTask.title),

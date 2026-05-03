@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../../core/database/tables.dart';
+import '../../core/database/app_database.dart' as drift;
 
 part 'task.freezed.dart';
 part 'task.g.dart';

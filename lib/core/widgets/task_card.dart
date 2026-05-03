@@ -173,7 +173,7 @@ class _AnimatedTaskCardState extends State<AnimatedTaskCard>
 
     // Staggered delay
     Future.delayed(
-      Duration(milliseconds: widget.index * AppTheme.animStagger),
+      Duration(milliseconds: widget.index * AppTheme.animStagger.inMilliseconds),
       () {
         if (mounted) _controller.forward();
       },

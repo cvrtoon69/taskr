@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'core/constants/app_theme.dart';
-import 'core/database/app_database.dart';
 import 'core/services/notification_service.dart';
 import 'core/services/settings_service.dart';
 import 'presentation/screens/splash_screen.dart';

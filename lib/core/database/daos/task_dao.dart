@@ -127,7 +127,7 @@ class TaskDao extends DatabaseAccessor<AppDatabase> with _$TaskDaoMixin {
   }
 
   // Mark task as completed
-  Future<bool> completeTask(String id) {
+  Future<int> completeTask(String id) {
     return update(tasks).write(
       TasksCompanion(
         isCompleted: const Value(true),
@@ -137,7 +137,7 @@ class TaskDao extends DatabaseAccessor<AppDatabase> with _$TaskDaoMixin {
   }
 
   // Mark task as incomplete
-  Future<bool> uncompleteTask(String id) {
+  Future<int> uncompleteTask(String id) {
     return update(tasks).write(
       const TasksCompanion(
         isCompleted: Value(false),
@@ -165,12 +165,7 @@ class TaskDao extends DatabaseAccessor<AppDatabase> with _$TaskDaoMixin {
 
   // Get task count for progress bar (parent tasks only)
   Stream<TaskProgress> watchTaskProgress() {
-    final totalQuery = select(tasks).watch();
-    final completedQuery = (select(tasks)
-          ..where((t) => t.isCompleted.equals(true)))
-        .watch();
-
-    return totalQuery.asyncMap((total) async {
+    return select(tasks).watch().asyncMap((total) async {
       final completed = await (select(tasks)
             ..where((t) => t.isCompleted.equals(true)))
           .get();

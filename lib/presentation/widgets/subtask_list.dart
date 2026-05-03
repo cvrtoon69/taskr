@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../core/constants/app_colors.dart';
 import '../../domain/entities/subtask.dart';
-import '../providers/task_repository_provider.dart';
+import '../providers/subtasks_provider.dart';
 
 class SubTaskList extends ConsumerWidget {
   final String taskId;

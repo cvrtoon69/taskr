@@ -13,6 +13,7 @@ class AppTheme {
   static const Duration shortAnimation = Duration(milliseconds: 200);
   static const Duration mediumAnimation = Duration(milliseconds: 300);
   static const Duration cardAnimation = Duration(milliseconds: 350);
+  static const Duration animStagger = Duration(milliseconds: 50);
   static const Duration backgroundLoop = Duration(seconds: 15);
   
   static const Curve defaultCurve = Curves.easeOutCubic;
